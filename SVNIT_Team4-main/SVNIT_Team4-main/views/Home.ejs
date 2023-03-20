@@ -1,0 +1,108 @@
+<%- include('partials/Navbar.ejs',{authenticated:authenticated}) %>
+<style>
+    .home {
+  min-height: 95vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.home .left {
+  width: 60vw !important;
+}
+.home .left h1 {
+  font-weight: 600;
+  font-size: 3.3rem;
+}
+.home .right {
+  width: 30vw !important;
+}
+.home .right img {
+  width: 500px !important;
+}
+@media (max-width: 1200px) {
+  .home {
+    text-align: center;
+    width: 100vw !important;
+    padding: 10px;
+  }
+  .home .left {
+    margin-top: 70px;
+    width: 100% !important;
+  }
+  .home .right {
+    margin-top: 70px;
+    width: 100% !important;
+  }
+}
+/* features */
+.features{
+    background-color:#eef0f5;
+}
+.feature{
+    height:300px;
+    width:300px;
+    
+}
+.types .card{
+    max-width:50vw !important;
+}
+
+/* swiper responsiveness */
+.swiper-container {
+  width: 480px;
+}
+
+@media screen and (min-width: 640px) {
+  .swiper-container {
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
+}
+</style>
+<div class="home">
+    <div class="left flexc w-100">
+      <div>
+        <h1>Create your Style</h1>
+        <h1 class="main">
+          with <span class="tprimary"> Exclsv.com</span>
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+          Quidem distinctio aut iure aspernatur! Sequi consequatur br <br />
+          tenetur minima saepe qui illo aliquid. Reiciendis accusamus
+          <br>
+        </p>
+        <div class=" mt-4">
+        <a href="/categories">
+          <button class="btn btnPrimary">
+            <b>Shop Now</b>
+          </button>
+        </a>
+        <% if(authenticated){ %>
+          <a href="/dashboard">
+              <button class="btn btnSecondary mx-2 my-1">
+                  <b>Dashboard</b>
+              </button>
+          </a>
+
+          <% }else{ %>
+              <a href="/signup">
+                  <button class="btn btnSecondary mx-2 my-1">
+                      <b>Signup</b>
+
+                  </button>
+              </a>
+
+              <% } %>
+      
+        </div>
+      </div>
+    </div>
+    <div class="right flexc w-100">
+      <img src="/images/landing.png" alt="" class="img-fluid w-75" />
+    </div>
+  </div>
